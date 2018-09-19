@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+                {% for line2 in dept %}
+			<div class="panel-group" id="panel-84614">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-84614" href="#{{ line2.dept_name }}">{{ line2.dept_name }}</a><span class="caret"></span>
+					</div>
+					<div id="{{ line2.dept_name }}" class="panel-collapse collapse">
+                         {% for line4 in userlist %}
+                 {% if line4.dept == line2.dept_name %}
+						<div class="panel-body checkbox table table-hover table-condensed" >
+                        <label>
+							{{ line4.name }} {{ line4.mphone }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input name="check_box_list" type="checkbox" value="{{ line4.mphone }}"
+                                                                                              /><label>
+						</div>{% endif %}{% endfor %}
+					</div>
+				</div>
+			</div>
+            {% endfor %}
+		</div>
+		<div class="col-md-8 column">
+			<div class="tabbable" id="tabs-108662">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						 <a href="#panel-382352" data-toggle="tab">会议通知</a>
+					</li>
+					<li>
+						 <a href="#panel-583412" data-toggle="tab">普通通知</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-382352">
+                        <form action="/duty/" method="post">
+<table  border="1">
+
+    <thead><tr >
+    <td colspan="3">会议通知如下：参与人员：<input type="text" name="dx" /><br></br>
+        会议时间：<input type="text" name="dx" />，会议内容：
+        <input type="text" name="dx" />，会议地点：<input type="text" name="dx" />，请您准时参加。(<input type="text"
+                                                                                              name="dx" />部)
+    <input type="submit" value="提交" /></td>
+</tr>
+    </thead>
+
+<tbody>
+
+
+{#<tr>#}
+{#    <td>{{ line2.mphone }}</td>#}
+{#    <td>{{ line2.name }}</td>#}
+{#    <td><input name="check_box_list" type="checkbox" value="{{ line2.mphone }}" /></td>#}
+{#<th>{{ line2.check_box_list }}</th>#}
+{#</tr>#}
+
+
+
+</tbody>
+</table>
+					</div>
+					<div class="tab-pane" id="panel-583412">
+						<p>
+							Howdy, I'm in Section 2.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{#<!-- 代码 开始 -->#}
+{##}
+{#<div class="nav">#}
+{#	<div class="nav-top">#}
+{#		<div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="/static/images/mini.png" ></div>#}
+{#	</div>#}
+{#	<ul>{% for line2 in dept %}#}
+{#		<li class="nav-item">#}
+{#			<a href="javascript:;"><i class="my-icon nav-icon icon_1"></i><span>{{ line2.dept_name }}</span><i class="my-icon nav-more"></i></a>#}
+{#			<ul>#}
+{#                    {% for line4 in userlist %}#}
+{#                        {% if line4.dept == line2.dept_name %}#}
+{#				<li><a href="javascript:;"><span>{{ line4.name }}</span></a></li>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+{#			</ul>#}
+{#		</li>{% endfor %}#}
+{#    </ul>#}
+{#</div>#}
+{##}
+{#<!-- 代码 结束 -->#}
+</form>
+	<section class="jq22-container">
+		<div class="container">
+		  <div class="col-md-6 col-sm-6">
+		    <h3>Default collapse with scaling icon</h3>
+		    <div class="panel-group wrap" id="bs-collapse">
+
+		      <div class="panel">
+		        <div class="panel-heading">
+		          <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#" href="#one">
+		          Collapse item #1
+		        </a>
+		      </h4>
+		        </div>
+		        <div id="one" class="panel-collapse collapse">
+		          <div class="panel-body">
+		            Where now are the horse and the rider? Where is the horn that was blowing? Where is the helm and the hauberk, and the bright hair flowing?
+		          </div>
+		        </div>
+
+		      </div>
+		      <!-- end of panel -->
+
+		      <div class="panel">
+		        <div class="panel-heading">
+		          <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#" href="#two">
+		         Collapse item #2
+		        </a>
+		      </h4>
+		        </div>
+		        <div id="two" class="panel-collapse collapse">
+		          <div class="panel-body">
+		            Where is the harp on the harpstring, and the red fire glowing? Where is the spring and the harvest and the tall corn growing?
+		          </div>
+
+		        </div>
+		      </div>
+		      <!-- end of panel -->
+
+		      <div class="panel">
+		        <div class="panel-heading">
+		          <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#" href="#three">
+		          Collapse item #3
+		        </a>
+		      </h4>
+		        </div>
+		        <div id="three" class="panel-collapse collapse">
+		          <div class="panel-body">
+		            The days have gone down in the West behind the hills into shadow. Who shall gather the smoke of the deadwood burning, Or behold the flowing years from the Sea returning?
+		          </div>
+		        </div>
+		      </div>
+		      <!-- end of panel -->
+
+		      <div class="panel">
+		        <div class="panel-heading">
+		          <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#" href="#four">
+		         Collapse item #4
+		        </a>
+		      </h4>
+		        </div>
+		        <div id="four" class="panel-collapse collapse in">
+		          <div class="panel-body">
+		            They have passed like rain on the mountain, like a wind in the meadow; The days have gone down in the West behind the hills into shadow.
+		          </div>
+		        </div>
+		      </div>
+		      <!-- end of panel -->
+
+		    </div>
+		    <!-- end of #bs-collapse  -->
+
+		  </div>
+
+		  <div class="col-md-6 col-sm-6">
+		    <h3>Accordion collapse with rotating icon</h3>
+		    <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+		      <div class="panel">
+		        <div class="panel-heading" role="tab" id="headingOne">
+		          <h4 class="panel-title">
+		        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		          Collapsible item #1
+		        </a>
+		      </h4>
+		        </div>
+		        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+		          <div class="panel-body">
+		            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+		          </div>
+		        </div>
+		      </div>
+		      <!-- end of panel -->
+
+		      <div class="panel">
+		        <div class="panel-heading" role="tab" id="headingTwo">
+		          <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		          Collapsible item #2
+		        </a>
+		      </h4>
+		        </div>
+		        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		          <div class="panel-body">
+		            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+		          </div>
+		        </div>
+		      </div>
+		      <!-- end of panel -->
+
+		      <div class="panel">
+		        <div class="panel-heading" role="tab" id="headingThree">
+		          <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		          Collapsible item #3
+		        </a>
+		      </h4>
+		        </div>
+		        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+		          <div class="panel-body">
+		            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+		          </div>
+		        </div>
+		      </div>
+		      <!-- end of panel -->
+
+		      <div class="panel">
+		        <div class="panel-heading" role="tab" id="headingFour">
+		          <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+		          Collapsible item #4
+		        </a>
+		      </h4>
+		        </div>
+		        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+		          <div class="panel-body">
+		            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+		          </div>
+		        </div>
+		      </div>
+		      <!-- end of panel -->
+
+		    </div>
+		    <!-- end of #accordion -->
+
+		  </div>
+		  <!-- end of wrap -->
+
+		</div>
+		<!-- end of container -->
+	</section>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		  $('.collapse.in').prev('.panel-heading').addClass('active');
+		  $('#accordion, #bs-collapse')
+		    .on('show.bs.collapse', function(a) {
+		      $(a.target).prev('.panel-heading').addClass('active');
+		    })
+		    .on('hide.bs.collapse', function(a) {
+		      $(a.target).prev('.panel-heading').removeClass('active');
+		    });
+		});
+	</script>
+
+</body>
+</html>
